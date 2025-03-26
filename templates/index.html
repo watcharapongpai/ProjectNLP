@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบพยากรณ์คำบรรยาย - KMITL</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/logo.png" width="75" height="75" alt="KMITL Logo"> 
+                <div>
+                    <span style="color: #f16322;">สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</span>
+                    <br>
+                    <span style="font-size: 14px; color: #555;">King Mongkut's Institute of Technology Ladkrabang</span>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+
+            <div class="col-md-7">
+                <div class="card mb-3">
+                    <h4 class="section-title">ฟังไฟล์เสียง</h4>
+                    <audio id="audioPlayer" controls class="w-100">
+                        <source id="audioSource" src="" type="audio/mpeg">
+                        เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+                    </audio>
+                </div>
+                <div class="card mb-3">
+                    <h4 class="section-title">หมวดหมู่และคำแนะนำ</h4>
+                    <span style="font-weight: bold;">หมวดหมู่ 3 อันดับ : </span><p id="categoryResult" class="text-primary"></p>
+                    <span style="font-weight: bold;">หมวดหมู่อันดับ 1 : </span><p id="primarycategoryResult" class="text-primary"></p>
+                    <span style="font-weight: bold;">คำแนะนำ : </span><p id="recommendationResult" class="text-success"></p>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card mb-3">
+                    <h4 class="section-title">วางลิงก์ YouTube</h4>
+                    <input type="text" id="youtubeUrl" class="form-control" placeholder="กรอกลิงก์วิดีโอ">
+                    <button id="predict-btn" type="button" class="btn btn-primary mt-3 w-100" onclick="downloadAndPredict()">แปลงและพยากรณ์</button>
+                    <p id="status" class="text-warning mt-2"></p>
+                </div>
+                <div class="card mb-3">
+                    <h4 class="section-title">ค่าความแม่นยำ (Accuracy)</h4>
+                    <p class="text-primary font-weight">โดยค่าความแม่นยำที่ใช้ในการวัดจะเป็นจำนวนคำทั้งหมดที่เหมือนกันระหว่างคำศัพท์ที่มาจาก model และคำศัพท์ที่อยู่ใน audio file</p>
+                    <p id="accuracyResult">ยังไม่มีข้อมูล</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <h4 class="section-title">คำบรรยายที่พยากรณ์ได้</h4>
+                    <p id="subtitleResult" class="text-dark"></p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <h4 class="section-title">คำบรรยายที่ถอดเสียง</h4>
+    
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs" id="subtitleTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="ai-tab" data-bs-toggle="tab" href="#ai-subtitle">ข้อความผ่านจาก Model ที่สร้าง</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="library-tab" data-bs-toggle="tab" href="#library-subtitle">ข้อความที่ได้จากในไฟล์ Audio</a>
+                        </li>
+                    </ul>
+    
+                    <!-- Tab Content -->
+                    <div class="tab-content mt-3">
+                        <div class="tab-pane fade show active" id="ai-subtitle">
+                            <p id="aiSubtitleResult" class="text-dark">ยังไม่มีข้อมูล</p>
+                        </div>
+                        <div class="tab-pane fade" id="library-subtitle">
+                            <p id="librarySubtitleResult" class="text-dark">ยังไม่มีข้อมูล</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

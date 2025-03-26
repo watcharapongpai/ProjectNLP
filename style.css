@@ -1,0 +1,90 @@
+body {
+  background-color: #f4f4f4;
+  font-family: "KMITLGO", "Noto Sans", Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap");
+
+
+.nav-tabs .nav-link.active {
+  background-color: #f16322 !important;  /* สีส้ม KMITL */
+  color: white !important;
+  font-weight: bold;
+  border-color: #f16322 #f16322 #fff !important;
+}
+
+.nav-tabs .nav-link {
+  color: #333;
+}
+.navbar {
+  background-color: white;
+  padding: 0px;
+  border-bottom: 2.5px solid #f16322;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.navbar-brand img {
+  margin-right: 15px;
+}
+.nav-item a {
+  color: black;
+  font-weight: bold;
+}
+.nav-item a:hover {
+  color: #f16322;
+}
+.language-switch {
+  margin-left: auto;
+}
+.language-switch button {
+  border: none;
+  background: none;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+.btn-active {
+  color: white;
+  background-color: #f16322;
+  border-radius: 20px;
+}
+.btn-inactive {
+  color: gray;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card {
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.btn-primary {
+  background-color: #f16322;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #cc5200;
+}
+.section-title {
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sub-text {
+  font-size: 14px;
+  color: #555;
+}
